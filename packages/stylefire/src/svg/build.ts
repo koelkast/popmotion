@@ -92,7 +92,12 @@ export function buildSVGAttrs(
   if (y !== undefined) attrs.y = y;
 
   // Handle special path length attributes
-  if (totalPathLength !== undefined && pathLength !== undefined) {
+  if (
+    totalPathLength !== undefined &&
+    pathLength !== undefined &&
+    typeof pathLength === 'number' &&
+    typeof pathSpacing === 'number'
+  ) {
     attrs['stroke-dashoffset'] = progressToPixels(-pathOffset, totalPathLength);
     attrs['stroke-dasharray'] = `${progressToPixels(
       pathLength,
