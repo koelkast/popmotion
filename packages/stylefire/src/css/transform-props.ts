@@ -1,7 +1,7 @@
 type Dictionary = { [key: string]: boolean };
 
 const axes = ['', 'X', 'Y', 'Z'];
-const order = ['translate', 'scale', 'rotate', 'skew', 'transformPerspective'];
+const order = ['translate', 'scale', 'rotate', 'skew', 'perspective'];
 
 export const transformProps = order.reduce(
   (acc, key) => {
